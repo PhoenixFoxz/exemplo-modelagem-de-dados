@@ -67,7 +67,7 @@ ALTER TABLE produtos
     MODIFY COLUMN preco DECIMAL(6,2) NOT NULL;
 ```
 
-### Renomear colunas
+#### Renomear colunas
 
 ```SQL
 ALTER TABLE fabricantes
@@ -75,4 +75,10 @@ ALTER TABLE fabricantes
 
 ALTER TABLE fabricantes
     CHANGE nome_do_fabricante nome VARCHAR(20) NOT NULL;
+```
+
+#### Adicionar colunas
+```SQL
+ALTER TABLE produtos
+    ADD quantidade INT NULL AFTER preco;
 ```
