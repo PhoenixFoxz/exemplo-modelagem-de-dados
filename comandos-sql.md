@@ -4,7 +4,7 @@
 
 ### Criar banco de dados
 
-```
+```SQL
 CREATE DATABASE nome_banco CHARACTER SET utf8mb4;
 ```
 
