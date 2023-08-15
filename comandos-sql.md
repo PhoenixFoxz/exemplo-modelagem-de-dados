@@ -10,7 +10,7 @@ CREATE DATABASE nome_banco CHARACTER SET utf8mb4;
 
 ### Criar tabela de fabricantes
 
-```
+```SQL
 CREATE TABLE nome_tabela(
 
     nome_campo1 INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
