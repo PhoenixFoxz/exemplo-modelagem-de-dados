@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/08/2023 às 16:58
+-- Tempo de geração: 16/08/2023 às 16:59
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `vendas`
+-- Banco de dados: `vendas_2`
 --
 
 -- --------------------------------------------------------
@@ -29,22 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `fabricantes` (
   `id` int(11) NOT NULL,
-  `nome` varchar(20) NOT NULL
+  `nome` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `fabricantes`
---
-
-INSERT INTO `fabricantes` (`id`, `nome`) VALUES
-(1, 'Asus'),
-(2, 'Dell'),
-(3, 'Apple'),
-(4, 'LG'),
-(5, 'Samsung'),
-(6, 'Brastemp'),
-(7, 'Positivo'),
-(8, 'Microsoft');
 
 -- --------------------------------------------------------
 
@@ -56,21 +42,10 @@ CREATE TABLE `produtos` (
   `id` int(11) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `descricao` text DEFAULT NULL,
-  `preco` decimal(10,2) NOT NULL,
+  `preco` decimal(6,2) NOT NULL,
   `quantidade` int(11) DEFAULT NULL,
   `fabricante_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `produtos`
---
-
-INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `quantidade`, `fabricante_id`) VALUES
-(1, 'Ultrabook', 'Equipamento de última feração cheio de recursos, com\r\n        processador Intel core i9 do balacobaco', 3500.00, 7, 2),
-(2, 'Tablet Android', 'Tablet com a versão 14 do sistema operacional Android,\r\n        possui tela de 10 polegadas e armazenamento de 128 GB,\r\n        e 64 GB de RAM porque o Eliel perguntou.', 1500.99, 5, 5),
-(3, 'Geladeira', 'Refrigerador frost-free com acesso à internet', 5000.00, 12, 6),
-(4, 'iPhone 18 pro Max', 'Smartphone Apple cheio das frescuras e caro para caramba. Coisa de rico...', 12666.66, 3, 3),
-(5, 'iPad Mini', 'Tablet Apple com tela retina display e bla bla bla', 4999.01, 5, 3);
 
 --
 -- Índices para tabelas despejadas
@@ -97,13 +72,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `fabricantes`
 --
 ALTER TABLE `fabricantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas

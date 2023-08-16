@@ -37,4 +37,37 @@ INSERT INTO produtos(
         -- Como já está colocada a chave estrangeira, deve-se usar o id
     );
 
+INSERT INTO produtos(
+    descricao, fabricante_id, nome, preco, quantidade)
+    VALUE(
+        'Tablet com a versão 14 do sistema operacional Android,
+        possui tela de 10 polegadas e armazenamento de 128 GB,
+        e 64 GB de RAM porque o Eliel perguntou.',
+        5,
+        'Tablet Android',
+        1500.99,
+        5
+    )
+
+INSERT INTO produtos(
+    descricao, fabricante_id, nome, preco, quantidade)
+    VALUE(
+        'Refrigerador frost-free com acesso à internet',
+        6,
+        'Geladeira',
+        5000,
+        12
+    ), (
+        'Smartphone Apple cheio das frescuras e caro para caramba. Coisa de rico...',
+        3,
+        'iPhone 18 pro Max',
+        12666.66,
+        3,
+    ), (
+        'Tablet Apple com tela retina display e bla bla bla',
+        3,
+        'iPad Mini',
+        4999.01,
+        5,
+    );
 ```
