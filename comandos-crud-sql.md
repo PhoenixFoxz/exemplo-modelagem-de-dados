@@ -188,5 +188,26 @@ SELECT ROUND(AVG(preco), 2) as "Média dos Preços" FROM produtos;
 
 -- CONTAGEM
 SELECT COUNT(id) as "Qtd de Produtos" FROM produtos;
+SELECT COUNT(fabricante_id) as "Qtd de Fabricantes com Produtos" FROM produtos;
+
+-- DISTINCT: Evita a contagem de itens repitidos
+SELECT COUNT(DISTINCT fabricante_id) as "Qtd de Fabricantes com Produtos" FROM produtos;
+
+-- DISTINCT é uma cláusula/flag que evita a duplicidade na contagem de registros.
+```
+
+### Operações matemáticas
+
+```SQL
+SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos;
+```
+
+### Segmentação/Agrupamento de resultados
+
+```SQL
+UPDATE produtos SET fabricante_id = 2 WHERE id = 2;
+SELECT fabricante_id, SUM(preco) FROM produtos;
+SELECT fabricante_id, SUM(preco) FROM produtos GROUP BY fabricante_id;
+SELECT fabricante_id, SUM(preco) as Total FROM produtos GROUP BY fabricante_id;
 ```
 
