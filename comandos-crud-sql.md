@@ -123,3 +123,15 @@ SELECT nome, descricao, preco FROM produtos WHERE NOT fabricante_id = 8;
 -- Versão usando operador relacional "diferença/diferente"
 SELECT nome, descricao, preco FROM produtos WHERE fabricante_id != 8;
 ```
+
+## UPDATE
+
+```SQL
+UPDATE fabricantes SET nome = 'Asus do Brasil' WHERE id = 1; -- NÃO SE ESQUEÇA DO WHERE!! PRERIGO!
+
+UPDATE fabricantes_zueira SET nome = 'Asus do Paraguai';
+
+UPDATE produtos SET preco = 6549.74 WHERE id = 4;
+
+UPDATE produtos SET quantidade = 12 WHERE fabricante_id = 6;
+```
