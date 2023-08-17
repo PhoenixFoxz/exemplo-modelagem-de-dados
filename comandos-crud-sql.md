@@ -171,3 +171,22 @@ SELECT nome, descricao FROM produtos WHERE descricao LIKE '%tablet%' OR nome LIK
 -- Usamos o operador LIKE e o caractere corinha % para permitir uma busca da palavra indicada em qualquer posição dentro do texto. Nesse contexto, o % significa 'qualquer texto' antes da palavra ou depois da palavra
 ```
 
+### Operações e funções de agregação
+
+```SQL
+SELECT SUM(preco) FROM produtos; -- SOMA
+SELECT SUM(preco) as Total FROM produtos; -- alias/apelido
+
+-- Exemplo de alias/apelido para outras colunas
+SELECT nome as Produto, preco as Preço FROM produtos;
+SELECT nome Produto, preco Preço FROM produtos;
+
+-- MÉDIA E ARREDONDAMENTO
+SELECT AVG(preco) as "Média dos Preços" FROM produtos;
+SELECT ROUND(AVG(preco)) as "Média dos Preços" FROM produtos;
+SELECT ROUND(AVG(preco), 2) as "Média dos Preços" FROM produtos;
+
+-- CONTAGEM
+SELECT COUNT(id) as "Qtd de Produtos" FROM produtos;
+```
+
