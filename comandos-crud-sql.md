@@ -71,3 +71,55 @@ INSERT INTO produtos(
         5,
     );
 ```
+
+## SELECT
+
+```SQL
+SELECT * FROM produtos;
+
+SELECT nome, preco FROM produtos;
+
+-- A ordem das colunas, altera na saída
+
+SELECT preco, nome FROM produtos;
+
+-- Condição perando a motra de dados
+SELECT nome, preco, quantidade FROM produtos WHERE preco < 5000;
+
+-- Mostre nome e descrição somente dos produtos da Apple
+SELECT nome, descricao FROM produtos WHERE fabricante_id = 3; -- Id do fabricante Apple
+```
+
+### Operadores Lógicos: E, OU, NÃO
+
+```SQL
+SELECT nome, preco FROM produtos WHERE preco >= 2000 AND preco <= 6000;
+
+-- A query abaixo não retorna registros
+-- já que as condições não foram totalmente atendidas
+SELECT nome, preco FROM produtos WHERE preco > 5000 AND preco <= 6000;
+```
+
+**OU**
+
+```SQL
+SELECT nome, preco FROM produtos WHERE preco > 5000 OR preco <= 3000;
+
+-- Exiba nome e preco somente dos produtos da Apple e da Samsung
+SELECT nome, preco FROM produtos WHERE fabricante_id = 3 OR fabricante_id = 5;
+
+-- Versão usando a função IN()
+SELECT nome, preco FROM produtos WHERE fabricante_id IN(3, 5);
+
+-- Versão invertendo a lógica da função
+SELECT nome, preco FROM produtos WHERE fabricante_id NOT IN(3, 5);
+```
+
+**NÃO**
+
+```SQL
+SELECT nome, descricao, preco FROM produtos WHERE NOT fabricante_id = 8;
+
+-- Versão usando operador relacional "diferença/diferente"
+SELECT nome, descricao, preco FROM produtos WHERE fabricante_id != 8;
+```
