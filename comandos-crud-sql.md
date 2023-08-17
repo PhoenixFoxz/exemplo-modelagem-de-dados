@@ -133,5 +133,41 @@ UPDATE fabricantes_zueira SET nome = 'Asus do Paraguai';
 
 UPDATE produtos SET preco = 6549.74 WHERE id = 4;
 
-UPDATE produtos SET quantidade = 12 WHERE fabricante_id = 6;
+UPDATE produtos SET quantidade = 20 WHERE fabricante_id = 3 OR fabricante_id = 5;
 ```
+
+## DELETE
+
+```SQL
+-- NÃO SE ESQUEÇA DO WHERE!! PRERIGO!
+DELETE FROM fabricantes WHERE id = 1;
+DELETE FROM fabricantes WHERE id = 4;
+
+-- A query abaixo NÃO FUNCIONA devido à restrição de chave estrangeira/relacionamento, ou seja, existem produtos associados ao fabricante 3 (Apple) 
+DELETE FROM fabricantes WHERE id = 3;
+```
+
+## SELECT: outras formas de uso
+
+### Classificando
+
+```SQL
+SELECT nome, preco FROM produtos ORDER BY nome;
+SELECT nome, preco FROM produtos ORDER BY preco;
+SELECT nome, preco FROM produtos ORDER BY preco DESC;
+
+-- DESC: classificação em ordem decrescente
+-- ASC (padrão): classificação em ordem crescente 
+
+SELECT nome, preco FROM produtos WHERE quantidade = 20 ORDER BY nome;
+```
+
+### Busca de dados
+
+```SQL
+SELECT nome, descricao FROM produtos WHERE descricao LIKE '%tablet%';
+SELECT nome, descricao FROM produtos WHERE descricao LIKE '%tablet%' OR nome LIKE '%tela%';
+
+-- Usamos o operador LIKE e o caractere corinha % para permitir uma busca da palavra indicada em qualquer posição dentro do texto. Nesse contexto, o % significa 'qualquer texto' antes da palavra ou depois da palavra
+```
+
